@@ -1,0 +1,21 @@
+dependencies:
+  OpenHover:
+    component_hash: null
+    source:
+      path: D:\Projects\Drone\ESP_Drone\components\OpenHover
+      type: local
+    version: '*'
+  drivers:
+    component_hash: null
+    source:
+      path: D:\Projects\Drone\ESP_Drone\drivers
+      type: local
+    version: '*'
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.2.0
+manifest_hash: 428ebffd6cb8d9d7601903e27d7e41045e1fcb75bfbf830d618f1ae53e6de412
+target: esp32s3
+version: 1.0.0
