@@ -3,6 +3,11 @@
 
 #include <stdint.h>
 
+#ifndef COUNT_ARGS
+#define COUNT_ARGS(X...) __COUNT_ARGS(, ##X, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+#define __COUNT_ARGS(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _n, X...) _n
+#endif
+
 extern const float *__vofa_package_tail__;
 
 
@@ -19,7 +24,7 @@ int ed_debugger_create(int port);
             This package tail is a type of NAN specified in IEEE 754.
  */
 void ed_debugger_send_vofa(int nums, ...);
-#define ed_debugger_send_float(...) ed_debugger_send_vofa(COUNT_ARGS(X ##__VA_ARGS__), ##__VA_ARGS__, *__vofa_package_tail__)
+#define ed_debugger_send_float(...) ed_debugger_send_vofa(COUNT_ARGS(X ##__VA_ARGS__) + 1, ##__VA_ARGS__, *__vofa_package_tail__)
 
 
 /**

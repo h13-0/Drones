@@ -1,5 +1,7 @@
 #include "ed_motor.h"
 
+#include <math.h>
+
 #include "esp_log.h"
 #include "esp_check.h"
 
@@ -57,7 +59,7 @@ int ed_motor_set_duty(ed_motor_t* motor, float duty)
 
     esp_err_t ret = ESP_OK;
     ESP_RETURN_ON_FALSE(
-        (ret = ledc_set_duty(LEDC_LOW_SPEED_MODE, motor->channel, (uint32_t)(duty * 8191))) == ESP_OK,
+        (ret = ledc_set_duty(LEDC_LOW_SPEED_MODE, motor->channel, (uint32_t)(duty / 100 * 8191))) == ESP_OK,
         -1,
         tag,
         "execute ledc_set_duty failed, ret: %s", esp_err_to_name(ret)
@@ -71,6 +73,24 @@ int ed_motor_set_duty(ed_motor_t* motor, float duty)
 
     return 0;
 }
+
+
+/**
+ * @brief: set the rps of the motor.
+ * @param:
+ *      - ed_motor_t* motor : handle of the motor
+ *      - float rps         : range: [0, 100]
+ * @return: 0 if success.
+ */
+int ed_motor_set_rps(ed_motor_t* motor, float rps)
+{
+    if(rps < motor->min_rps)
+        return ed_motor_set_duty(motor, 0);
+
+    float duty_cycle = exp((rps - motor->c) / motor->k);
+    return ed_motor_set_duty(motor, duty_cycle);
+}
+
 
 /**
  * @brief: release and reset the peripherals of motor.

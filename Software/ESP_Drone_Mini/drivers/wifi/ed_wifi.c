@@ -134,7 +134,7 @@ ed_wifi_mode_t ed_wifi_get_status(void)
     ed_wifi_mode_t current_mode;
 
     // waiting to enter the critical zone..
-    while(wifi_mode_seq_lock %2 == 0);
+    while(wifi_mode_seq_lock %2);
 
     do {
         if(wifi_mode_seq_lock_old != wifi_mode_seq_lock)
@@ -151,7 +151,7 @@ bool ed_wifi_get_sta_status(void)
     bool sta_status;
 
     // waiting to enter the critical zone..
-    while(ed_wifi_sta_seq_lock %2 == 0);
+    while(ed_wifi_sta_seq_lock %2);
 
     do {
         if(ed_wifi_sta_seq_lock_old != ed_wifi_sta_seq_lock)

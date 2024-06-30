@@ -13,7 +13,7 @@
 #include "ed_drivers.h"
 #include "ed_debugger.h"
 #include "ed_imu.h"
-#include "quadrotor_pid.h"
+#include "oh_quadrotor_pid.h"
 
 static const char* tag = "app";
 
@@ -30,7 +30,11 @@ static float gx = 0, gy = 0, gz = 0;
 static oh_drv_status_t oh_status = { 0 };
 static oh_drv_quadrotor_output_t oh_output = { 0 };
 
+// drv
 static ed_drv_t drv = ESP_DRONE;
+
+// temp for debug
+static float base_rps = 0;
 
 void IRAM_ATTR imu_int_handler(void *args)
 {
@@ -59,19 +63,30 @@ void motion_control_task(void *pvParameters)
         ed_imu_get_accel(&ax, &ay, &az);
         ed_imu_get_gyro(&gx, &gy, &gz);
 
-        // copy sensor data(TODO)
+        // copy sensor data
         oh_status.pitch = pitch;
         oh_status.roll = roll;
         oh_status.yaw = yaw;
+        oh_status.gx = gx;
+        oh_status.gy = gy;
+        oh_status.gz = gz;
 
         // control realize.
-        quad_pid_control_realize(&oh_status, &oh_output);
+        oh_quad_pid_control_realize(&oh_status, &(drv.pid_param), &oh_output);
 
         // perform output.
-        ed_motor_set_duty(&(drv.drivers.m1), oh_output.m1);
-        ed_motor_set_duty(&(drv.drivers.m2), oh_output.m2);
-        ed_motor_set_duty(&(drv.drivers.m3), oh_output.m3);
-        ed_motor_set_duty(&(drv.drivers.m4), oh_output.m4);
+        if(base_rps > 1)
+        {
+            ed_motor_set_rps(&(drv.drivers.m1), oh_output.m1 + base_rps);
+            ed_motor_set_rps(&(drv.drivers.m2), oh_output.m2 + base_rps);
+            ed_motor_set_rps(&(drv.drivers.m3), oh_output.m3 + base_rps);
+            ed_motor_set_rps(&(drv.drivers.m4), oh_output.m4 + base_rps);
+        } else {
+            ed_motor_set_rps(&(drv.drivers.m1), 0);
+            ed_motor_set_rps(&(drv.drivers.m2), 0);
+            ed_motor_set_rps(&(drv.drivers.m3), 0);
+            ed_motor_set_rps(&(drv.drivers.m4), 0);
+        }
     }
     vTaskDelete( NULL );
 }
@@ -92,12 +107,29 @@ void app_main(void)
     );
 
     // bind parameters to debugger.
+    ed_debugger_bind_float(0, &base_rps);
+    // veloc_roll
+    ed_debugger_bind_float(1, &(drv.pid_param.veloc_roll.proportion));
+    ed_debugger_bind_float(2, &(drv.pid_param.veloc_roll.integration));
+    ed_debugger_bind_float(3, &(drv.pid_param.veloc_roll.differention));
+    ed_debugger_bind_float(4, &(drv.pid_param.veloc_roll.max_abs_int_output));
+    ed_debugger_bind_float(5, &(drv.pid_param.veloc_roll.target));
+    // angle_roll
+    ed_debugger_bind_float(6, &(drv.pid_param.angle_roll.proportion));
+    ed_debugger_bind_float(7, &(drv.pid_param.angle_roll.integration));
+    ed_debugger_bind_float(8, &(drv.pid_param.angle_roll.differention));
+    ed_debugger_bind_float(9, &(drv.pid_param.angle_roll.max_abs_int_output));
+    ed_debugger_bind_float(10, &(drv.pid_param.angle_roll.target));
+
 
     while(1)
     {
+        float veloc_int_out = drv.pid_param.veloc_roll._sumError * drv.pid_param.veloc_roll.integration;
+        float speed_int_out = drv.pid_param.angle_roll._sumError * drv.pid_param.angle_roll.integration;
+
         // report sensor data.
-        ESP_LOGI(tag, "Pitch: %5.3lf, roll: %5.3lf, yaw: %5.3lf, ax: %5.3lf, ay: %5.3lf, az: %5.3lf", pitch, roll, yaw, ax, ay, az);
-        //ESP_LOGI(tag, "gx: %5.3lf, gy: %5.3lf, gz: %5.3lf", gx, gy, gz);
+        ed_debugger_send_float(pitch, roll, yaw, gx, gy, gz, drv.pid_param.veloc_roll._sumError, veloc_int_out, drv.pid_param.veloc_roll.target, speed_int_out);
+
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 

@@ -10,7 +10,11 @@ typedef struct {
     ledc_channel_t channel;
 
     // calibration
-
+    // NOTE: The motor must undergo speed calibration and be fitted logarithmically to the following formula
+    //          rps = k*exp(duty) + c
+    float k;
+    float c;
+    float min_rps;
 } ed_motor_t;
 
 
@@ -30,6 +34,16 @@ int ed_motor_init(ed_motor_t* motor);
  * @return: 0 if success.
  */
 int ed_motor_set_duty(ed_motor_t* motor, float duty);
+
+
+/**
+ * @brief: set the rps of the motor.
+ * @param:
+ *      - ed_motor_t* motor : handle of the motor
+ *      - float rps         : range: [0, 100]
+ * @return: 0 if success.
+ */
+int ed_motor_set_rps(ed_motor_t* motor, float rps);
 
 
 /**

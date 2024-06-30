@@ -6,13 +6,13 @@
  * @brief:  Basic PIC Calculate.
  * @param:
  * 		oh_basic_pid_t *pid:    PositionPID struct.
- * 		float curr_point: Current system status.
+ * 		float curr_point:       Current system status.
  * @return:
  * 		Calculation result.
  */
 float oh_basic_pid_calc(oh_basic_pid_t *pid, float curr_point)
 {
-	float error = pid->setpoint - curr_point;
+	float error = pid->target - curr_point;
 	float result;
 
 	pid -> _sumError += error;
@@ -54,7 +54,7 @@ float oh_basic_pid_calc(oh_basic_pid_t *pid, float curr_point)
  */
 float oh_pos_pid_calc(oh_pos_pid_t *pid, float curr_point)
 {
-	float error = pid->setpoint - curr_point;
+	float error = pid->target - curr_point;
 	float result;
 
 	pid -> _sumError += error;
@@ -141,7 +141,7 @@ float oh_pos_pid_calc(oh_pos_pid_t *pid, float curr_point)
  */
 float oh_pos_pid_calc_with_diff(oh_pos_pid_t *pid, float curr_point, float curr_diff)
 {
-	float error = pid->setpoint - curr_point;
+	float error = pid->target - curr_point;
 	float result;
 
 	pid -> _sumError += error;
@@ -396,7 +396,7 @@ float oh_pos_pid_calc_with_err_diff(oh_pos_pid_t *pid, float curr_err, float cur
  */
 float oh_inc_pid_calc(oh_inc_pid_t *pid, float curr_point)
 {
-	float error = pid->setpoint - curr_point;
+	float error = pid->target - curr_point;
 	float result;
 
 	result =

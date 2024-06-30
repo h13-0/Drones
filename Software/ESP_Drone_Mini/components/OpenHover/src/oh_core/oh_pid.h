@@ -15,7 +15,7 @@ extern "C" {
 /**
  * @brief: Basic PID typedef struct.
  * @param:
- * 		float setpoint:       Target value of PID control system.
+ * 		float target:         Target value of PID control system.
  * 		float proportion:     PID proportional coefficient.
  * 		float integration:    PID integral coefficient.
  * 		float differention:   PID differential coefficient.
@@ -24,7 +24,7 @@ extern "C" {
 typedef struct
 {
 	//Basic parameters of PID
-	float setpoint;
+	float target;
 
 	float proportion;
 	float integration;
@@ -62,13 +62,13 @@ typedef enum
  * 		@Basic parameters are same as Basic PID.
  * 		@configs:
  * 			oh_pid_func_status_t limitIntegration:     Limit sum error.
- * 			oh_pid_func_status_t autoResetIntegration: Automatically reset integration when the current value crosses the setpoint.
+ * 			oh_pid_func_status_t autoResetIntegration: Automatically reset integration when the current value crosses the target.
  * 			float max_abs_int_output:  Integration term output limit.
  */
 typedef struct
 {
 	//Basic parameters of PID
-	float setpoint;
+	float target;
 
 	float proportion;
 	float integration;
@@ -86,7 +86,7 @@ typedef struct
 		//integration term limiting.
 		oh_pid_func_status_t limitIntegration : 1;
 
-		//Automatically reset integration when crossing setpoint.
+		//Automatically reset integration when crossing target.
 		oh_pid_func_status_t autoResetIntegration : 1;
 
 		//private realizations.
@@ -159,7 +159,7 @@ float oh_pos_pid_calc_with_err_diff(oh_pos_pid_t *pid, float curr_err, float cur
  */
 typedef struct {
 	//Basic parameters of PID
-	float setpoint;
+	float target;
 
 	float proportion;
 	float integration;

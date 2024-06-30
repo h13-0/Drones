@@ -14,6 +14,7 @@ int ed_imu_int_enable(gpio_num_t int_io, gpio_isr_t int_handler);
 
 int ed_imu_get_eular(float *pitch, float *roll, float *yaw);
 
+// degree per sec
 int ed_imu_get_gyro(float *gx, float *gy, float *gz);
 
 int ed_imu_get_accel(float *ax, float *ay, float *az);

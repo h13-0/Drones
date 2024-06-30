@@ -2,17 +2,22 @@
 #define __OH_QUADROTOR_PID_H__
 
 #include "oh_drv.h"
+#include "oh_pid.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 typedef struct {
-    // attitude angle pid.
-    oh_pos_pid_t pitch_pid;
-    oh_pos_pid_t roll_pid;
-    oh_pos_pid_t yaw_pid;
+    // angular velocity pid.
+    oh_pos_pid_t veloc_pitch;
+    oh_pos_pid_t veloc_roll;
+    oh_pos_pid_t veloc_yaw;
 
+    // attitude angle pid.
+    oh_pos_pid_t angle_pitch;
+    oh_pos_pid_t angle_roll;
+    oh_pos_pid_t angle_yaw;
 } oh_quad_pid_t;
 
 /**
