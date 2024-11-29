@@ -1,4 +1,6 @@
 Circuit/*/History
 Circuit/*/__Previews
 Circuit/*/Project Logs for drone
+Circuit/*/Project Outputs for Drone
 Software/*/main/esp_drone_private_config.h
+./TODO.txt
