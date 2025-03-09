@@ -50,6 +50,23 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
+DocumentPath=Sheet2.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=IBOMPDNL
+
+[Document2]
 DocumentPath=Sheet1.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -66,7 +83,24 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LIFYFCGV
 
-[Document2]
+[Document3]
+DocumentPath=Caps.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MXJTMHDY
+
+[Document4]
 DocumentPath=ESP32S3-MINI1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -83,7 +117,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HTQWXRFK
 
-[Document3]
+[Document5]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\ESP32-S3.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -100,7 +134,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document4]
+[Document6]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\Battery.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -117,7 +151,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LUBDDBYP
 
-[Document5]
+[Document7]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\RT6150.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -134,7 +168,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SBLMRFTK
 
-[Document6]
+[Document8]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\TPS63051.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -151,7 +185,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FSVQDRFY
 
-[Document7]
+[Document9]
 DocumentPath=PCB1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -168,7 +202,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UIFAMNPS
 
-[Document8]
+[Document10]
 DocumentPath=TPS63051RMWR.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -185,7 +219,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=EJPNCOTX
 
-[Document9]
+[Document11]
 DocumentPath=AON6512.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -202,7 +236,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ELJVQCMH
 
-[Document10]
+[Document12]
 DocumentPath=SMT inductor.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -219,8 +253,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JFXTIXGQ
 
-[Document11]
-DocumentPath=CAMtastic1.Cam
+[Document13]
+DocumentPath=PCB2.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -234,17 +268,38 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=ESQCBMNI
+
+[Document14]
+DocumentPath=51005.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=XCPFIIXH
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Drone\PCB1.DRR
+DocumentPath=Project Outputs for Drone\Design Rule Check - PCB1.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Drone\PCB1.LDP
+DocumentPath=Project Outputs for Drone\PCB1.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument3]
+DocumentPath=Project Outputs for Drone\PCB1.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Drone\PCB1.TXT
 DItemRevisionGUID=
 
