@@ -135,6 +135,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
+DocumentPath=Type-C-16Pin.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=NDXAZUUE
+
+[Document7]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\Battery.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -151,7 +168,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LUBDDBYP
 
-[Document7]
+[Document8]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\RT6150.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -168,7 +185,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SBLMRFTK
 
-[Document8]
+[Document9]
 DocumentPath=..\..\..\..\Altium Designer Libs\Customed\AltiumDesignerLibs\SchLib\TPS63051.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -185,7 +202,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FSVQDRFY
 
-[Document9]
+[Document10]
 DocumentPath=PCB1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -202,7 +219,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UIFAMNPS
 
-[Document10]
+[Document11]
 DocumentPath=TPS63051RMWR.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -219,7 +236,24 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=EJPNCOTX
 
-[Document11]
+[Document12]
+DocumentPath=Type-C-16Pin.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=VOUPQIWO
+
+[Document13]
 DocumentPath=AON6512.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -236,7 +270,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ELJVQCMH
 
-[Document12]
+[Document14]
 DocumentPath=SMT inductor.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -253,7 +287,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JFXTIXGQ
 
-[Document13]
+[Document15]
 DocumentPath=PCB2.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -270,7 +304,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ESQCBMNI
 
-[Document14]
+[Document16]
 DocumentPath=51005.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -286,6 +320,40 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XCPFIIXH
+
+[Document17]
+DocumentPath=Switch_and_button.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=AENHJWLK
+
+[Document18]
+DocumentPath=Switch_and_button.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Drone\Design Rule Check - PCB1.html
